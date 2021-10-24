@@ -6,7 +6,7 @@ const hbs = require('hbs')
 const test = require('./utils/test')
 
 const app = express()
-const port=process.env.port||3000
+const port=process.env.PORT||3000
 
 // Define paths for Express config
 const publicDirectoryPath = path.join(__dirname, '../public')
@@ -21,7 +21,7 @@ hbs.registerPartials(partialsPath)
 // Setup static directory to serve
 app.use(express.static(publicDirectoryPath))
 
-app.get('/', (req, res) => {
+app.get('', (req, res) => {
     res.render('index', {
         title: 'Weather',
         name: 'Andrew Mead'
